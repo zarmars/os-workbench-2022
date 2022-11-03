@@ -1,0 +1,412 @@
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o ./build/x86-qemu/thread-os.o
+ ./thread-os.c
+
+x86_64-linux-gnu-gcc
+ -MMD
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -m32
+ -fno-pic
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/start32.o
+ $AM_HOME/am/src/x86/qemu/start32.S
+
+x86_64-linux-gnu-gcc
+ -MMD
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -m32
+ -fno-pic
+ -c
+ -o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/trap32.o
+ $AM_HOME/am/src/x86/qemu/trap32.S
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/trm.o
+ $AM_HOME/am/src/x86/qemu/trm.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/cte.o
+ $AM_HOME/am/src/x86/qemu/cte.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/ioe.o
+ $AM_HOME/am/src/x86/qemu/ioe.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/vme.o
+ $AM_HOME/am/src/x86/qemu/vme.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I./../abstract-machine/am/src
+ -I$AM_HOME/am/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/am/build/x86-qemu/src/x86/qemu/mpe.o
+ $AM_HOME/am/src/x86/qemu/mpe.c
+
+ar
+ rcs
+ $AM_HOME/am/build/am-x86-qemu.a
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/start32.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/trap32.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/trm.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/cte.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/ioe.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/vme.o
+ $AM_HOME/am/build/x86-qemu/src/x86/qemu/mpe.o
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I$AM_HOME/klib/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/klib/build/x86-qemu/src/string.o
+ $AM_HOME/klib/src/string.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I$AM_HOME/klib/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o
+ $AM_HOME/klib/build/x86-qemu/src/int64.o
+ $AM_HOME/klib/src/int64.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I$AM_HOME/klib/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/klib/build/x86-qemu/src/cpp.o
+ $AM_HOME/klib/src/cpp.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I$AM_HOME/klib/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o $AM_HOME/klib/build/x86-qemu/src/stdlib.o
+ $AM_HOME/klib/src/stdlib.c
+
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -ggdb
+ -MMD
+ -Wall
+ -Werror
+ -I$AM_HOME/klib/include
+ -I./../abstract-machine/am/include/
+ -I./../abstract-machine/klib/include/
+ -D__ISA__=\"x86\"
+ -D__ISA_X86__
+ -D__ARCH__=x86-qemu
+ -D__ARCH_X86_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m32
+ -fno-pic
+ -fno-omit-frame-pointer
+ -march=i386
+ -c
+ -o
+ $AM_HOME/klib/build/x86-qemu/src/stdio.o
+ $AM_HOME/klib/src/stdio.c
+
+ar
+ rcs
+ $AM_HOME/klib/build/klib-x86-qemu.a
+ $AM_HOME/klib/build/x86-qemu/src/string.o
+ $AM_HOME/klib/build/x86-qemu/src/int64.o
+ $AM_HOME/klib/build/x86-qemu/src/cpp.o
+ $AM_HOME/klib/build/x86-qemu/src/stdlib.o
+ $AM_HOME/klib/build/x86-qemu/src/stdio.o
+
+x86_64-linux-gnu-ld
+ -melf_i386
+ -N
+ -Ttext-segment=0x00100000
+ -o ./build/thread-os-x86-qemu.elf
+ --start-group
+ ./build/x86-qemu/thread-os.o
+ ./../abstract-machine/am/build/am-x86-qemu.a
+ ./../abstract-machine/klib/build/klib-x86-qemu.a
+ --end-group
+
+x86_64-linux-gnu-gcc
+ -static
+ -ggdb
+ -m32
+ -fno-pic
+ -Os
+ -nostdlib
+ -Ttext 0x7c00
+ -I./../abstract-machine/am/src
+ -o bootblock.o start.S  main.c
+
+cp bootblock.o boot.o
+
+python3 genboot.py bootblock.o
+
+( cat ./../abstract-machine/am/src/x86/qemu/boot/bootblock.o;
+  head -c 1024 /dev/zero;
+  cat ./build/thread-os-x86-qemu.elf
+)
+ > ./build/thread-os-x86-qemu

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+qemu-system-x86_64 \
+  -machine accel=tcg \
+  -smp 1 \
+  -S -s \
+  -drive format=raw,file=$1 &
+pid=$!
+
+gdb \
+  -ex "target remote localhost:1234" \
+  -ex "set architecture i386:x86-64" \
+  -ex "set confirm off"
+
+kill -9 $!

@@ -1,0 +1,579 @@
+#
+ Building
+ hello-image
+ [x86_64-qemu]
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/
+ &&
+ echo
+ +
+ CC
+ main.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/main.o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/main.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/
+ &&
+ echo
+ +
+ CC
+ say.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/say.o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/say.c
+make
+ -s
+ -C
+ /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am
+ archive
+#
+ Building
+ am-archive
+ [x86_64-qemu]
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ AS
+ src/x86/qemu/start64.S
+x86_64-linux-gnu-gcc
+ -MMD
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -m64
+ -fPIC
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/start64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/start64.S
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ AS
+ src/x86/qemu/trap64.S
+x86_64-linux-gnu-gcc
+ -MMD
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -m64
+ -fPIC
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/trap64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/trap64.S
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ CC
+ src/x86/qemu/trm.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/trm.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/trm.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ CC
+ src/x86/qemu/cte.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/cte.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/cte.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ CC
+ src/x86/qemu/ioe.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/ioe.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/ioe.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ CC
+ src/x86/qemu/vme.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/vme.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/vme.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/
+ &&
+ echo
+ +
+ CC
+ src/x86/qemu/mpe.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/mpe.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/src/x86/qemu/mpe.c
+echo
+ +
+ AR
+ "->"
+ build/am-x86_64-qemu.a
+ar
+ rcs
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/am-x86_64-qemu.a
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/start64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/trap64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/trm.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/cte.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/ioe.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/vme.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/am/build/x86_64-qemu/src/x86/qemu/mpe.o
+make
+ -s
+ -C
+ /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib
+ archive
+#
+ Building
+ klib-archive
+ [x86_64-qemu]
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/
+ &&
+ echo
+ +
+ CC
+ src/string.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/string.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/src/string.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/
+ &&
+ echo
+ +
+ CC
+ src/int64.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/int64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/src/int64.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/
+ &&
+ echo
+ +
+ CC
+ src/cpp.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/cpp.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/src/cpp.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/
+ &&
+ echo
+ +
+ CC
+ src/stdlib.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/stdlib.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/src/stdlib.c
+mkdir
+ -p
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/
+ &&
+ echo
+ +
+ CC
+ src/stdio.c
+x86_64-linux-gnu-gcc
+ -std=gnu11
+ -O2
+ -MMD
+ -Wall
+ -Werror
+ -I/home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/include
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/include/
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/include/
+ -D__ISA__=\"x86_64\"
+ -D__ISA_X86_64__
+ -D__ARCH__=x86_64-qemu
+ -D__ARCH_X86_64_QEMU
+ -D__PLATFORM__=qemu
+ -D__PLATFORM_QEMU
+ -DARCH_H=\"arch/x86_64-qemu.h\"
+ -fno-asynchronous-unwind-tables
+ -fno-builtin
+ -fno-stack-protector
+ -Wno-main
+ -U_FORTIFY_SOURCE
+ -m64
+ -fPIC
+ -mno-sse
+ -c
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/stdio.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/src/stdio.c
+echo
+ +
+ AR
+ "->"
+ build/klib-x86_64-qemu.a
+ar
+ rcs
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/klib-x86_64-qemu.a
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/string.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/int64.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/cpp.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/stdlib.o
+ /home/gongxing/work_space/os/os-workbench-2022/abstract-machine/klib/build/x86_64-qemu/src/stdio.o
+echo
+ +
+ LD
+ "->"
+ build/hello-x86_64-qemu.elf
+
+x86_64-linux-gnu-ld
+ -melf_x86_64
+ -N
+ -Ttext-segment=0x00100000
+ -o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/hello-x86_64-qemu.elf
+ --start-group
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/main.o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/x86_64-qemu/say.o
+ /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/build/am-x86_64-qemu.a
+ /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/klib/build/klib-x86_64-qemu.a
+ --end-group
+
+echo \# Creating image [x86_64-qemu]
+make
+ -s
+ -C
+ /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src/x86/qemu/boot
+
+echo +CC start.S main.c
+
+x86_64-linux-gnu-gcc
+ -static
+ -m32
+ -fno-pic
+ -Os
+ -nostdlib
+ -Ttext 0x7c00
+ -I/home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src
+ -o bootblock.o start.S main.c
+
+python3 genboot.py bootblock.o
+
+echo
+ +
+ CREATE
+ "->"
+ build/hello-x86_64-qemu
+
+(
+ cat /home/gongxing/work_space/os/os-workbench-2022/demo/../abstract-machine/am/src/x86/qemu/boot/bootblock.o;
+ head -c 1024 /dev/zero;
+ cat /home/gongxing/work_space/os/os-workbench-2022/demo/build/hello-x86_64-qemu.elf
+)
+ >
+ /home/gongxing/work_space/os/os-workbench-2022/demo/build/hello-x86_64-qemu
