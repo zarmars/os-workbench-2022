@@ -13,5 +13,24 @@ void print_key() {
     puts("Key pressed: ");
     puts(key_names[event.keycode]);
     puts("\n");
+    switch (event.keycode) {
+      case AM_KEY_ESCAPE:
+        game_over = true;
+        break;
+      case AM_KEY_INSERT:
+        vy_pixel += delta_speed;
+        break;
+      case AM_KEY_DELETE:
+        vy_pixel -= delta_speed;
+        break;
+      case AM_KEY_HOME:
+        vx_pixel -= delta_speed;
+        break;
+      case AM_KEY_END:
+        vx_pixel += delta_speed;
+        break;
+      default:
+        break;
+    }
   }
 }
