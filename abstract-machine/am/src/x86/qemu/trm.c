@@ -1,4 +1,5 @@
 #include "x86-qemu.h"
+#include <stdio.h>
 
 Area heap = {};
 int __am_ncpu = 0;
@@ -78,6 +79,7 @@ void __am_lapic_init() {
         if (*ptr == '\0') {
           ptr += 12;
           panic_on(++__am_ncpu > MAX_CPU, "cannot support > MAX_CPU processors");
+          printf("__am_ncpu: %d\n", __am_ncpu);
         }
       }
       return;

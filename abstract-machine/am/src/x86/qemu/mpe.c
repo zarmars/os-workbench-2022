@@ -1,10 +1,12 @@
 #include "x86-qemu.h"
+#include <stdio.h>
 
 struct cpu_local __am_cpuinfo[MAX_CPU] = {};
 static void (* volatile user_entry)();
 static int ap_ready = 0;
 
 static void call_user_entry() {
+  printf("Total %d cpus\n", __am_ncpu);
   user_entry();
   panic("MPE entry should not return");
 }

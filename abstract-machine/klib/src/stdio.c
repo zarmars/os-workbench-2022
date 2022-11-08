@@ -7,6 +7,17 @@
 
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
 
+// lock to avoid interleaving concurrent printf's
+// static struct {
+//   struct spinlock lock;
+//   int locking;
+// } pr;
+
+static int locked = 0;
+
+void lock() { while (atomic_xchg(&locked, 1)); }
+void unlock() {atomic_xchg(&locked, 0); }
+
 static char digits[] = "0123456789abcdef";
 
 static void
@@ -52,6 +63,7 @@ int printf(const char *fmt, ...) {
 
   // TODO: thread-safe implementation
   // acquire lock
+  lock();
 
   if (fmt == NULL) {
     panic("null fmt");
@@ -97,6 +109,7 @@ int printf(const char *fmt, ...) {
   va_end(ap);
   // TODO: thread-safe implementation
   // release lock
+  unlock();
   return 0;
 }
 

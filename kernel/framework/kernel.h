@@ -15,8 +15,23 @@ MODULE(os) {
   void (*run)();
 };
 
+// Extends to:
+//typedef struct mod_os_t mod_os_t;
+//extern mod_os_t *mod;
+//struct mod_os_t {
+//  void (*init)();
+//  void (*run) ();
+//}
+
 MODULE(pmm) {
   void  (*init)();
   void *(*alloc)(size_t size);
   void  (*free)(void *ptr);
+};
+
+MODULE(test) {
+  void (*test_0)();
+  void (*test_1)();
+  void (*test_2)();
+  void (*test_3)();
 };
